@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obrigado! - Praqt</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #0A0F1E;
+      color: #F0F4FF;
+      font-family: 'DM Sans', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .ob {
+      min-height: 100vh;
+      background: #0A0F1E;
+      color: #F0F4FF;
+      font-family: 'DM Sans', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .ob-box {
+      text-align: center;
+      max-width: 600px;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .ob-ico {
+      font-size: 80px;
+      margin-bottom: 28px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .ob-h {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 800;
+      margin-bottom: 16px;
+      letter-spacing: -1px;
+    }
+
+    .ob-sub {
+      font-size: 18px;
+      color: #94A3B8;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .ob-check {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(200, 241, 53, 0.1);
+      border: 1px solid rgba(200, 241, 53, 0.25);
+      border-radius: 12px;
+      padding: 14px 20px;
+      margin-bottom: 28px;
+    }
+
+    .ob-check-ico {
+      color: #C8F135;
+      font-size: 20px;
+    }
+
+    .ob-check-t {
+      color: #C8F135;
+      font-weight: 600;
+    }
+
+    .ob-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 32px 0;
+    }
+
+    .ob-meta-item {
+      background: rgba(15, 22, 41, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .ob-meta-label {
+      font-size: 12px;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .ob-meta-value {
+      font-size: 16px;
+      font-weight: 600;
+      color: #F0F4FF;
+    }
+
+    .ob-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .ob-btn {
+      background: #C8F135;
+      color: #0A0F1E;
+      border: none;
+      border-radius: 10px;
+      padding: 14px 28px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .ob-btn:hover {
+      background: #B5DC20;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(200, 241, 53, 0.25);
+    }
+
+    .ob-btn-alt {
+      background: transparent;
+      color: #94A3B8;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .ob-btn-alt:hover {
+      color: #F0F4FF;
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .ob-wa {
+      color: #25D366;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .ob-wa:hover {
+      color: #20B857;
+    }
+
+    @media (max-width: 640px) {
+      .ob-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .ob-ico {
+        font-size: 60px;
+      }
+
+      .ob-h {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="ob">
+    <div class="ob-box">
+      <div class="ob-ico">🎉</div>
+      <h1 class="ob-h">Recebemos sua solicitação!</h1>
+      <p class="ob-sub">
+        Obrigado por demonstrar interesse na Praqt. Nossa equipe já recebeu seus dados e você em breve receberá um contato para agendar sua demonstração gratuita.
+      </p>
+
+      <div class="ob-check">
+        <span class="ob-check-ico">✓</span>
+        <span class="ob-check-t">Sua solicitação foi confirmada</span>
+      </div>
+
+      <div class="ob-meta" id="meta">
+        <div class="ob-meta-item">
+          <div class="ob-meta-label">Nome</div>
+          <div class="ob-meta-value" id="displayNome">Visitante</div>
+        </div>
+        <div class="ob-meta-item">
+          <div class="ob-meta-label">E-mail</div>
+          <div class="ob-meta-value" style="font-size: 14px;" id="displayEmail">não informado</div>
+        </div>
+        <div class="ob-meta-item">
+          <div class="ob-meta-label">Empresa</div>
+          <div class="ob-meta-value" id="displayEmpresa">não informada</div>
+        </div>
+        <div class="ob-meta-item">
+          <div class="ob-meta-label">Status</div>
+          <div class="ob-meta-value" style="color: #C8F135;">Aguardando contato</div>
+        </div>
+      </div>
+
+      <p style="font-size: 16px; color: #94A3B8; margin-bottom: 24px;">
+        Nosso time entrará em contato <a href="https://wa.me/5511999999999" class="ob-wa" target="_blank" rel="noopener noreferrer">via WhatsApp</a> em até <strong>2 horas úteis</strong> para confirmar o melhor horário para a sua demonstração.
+      </p>
+
+      <div class="ob-btns">
+        <a href="/" class="ob-btn">Voltar à página inicial</a>
+        <a 
+          href="https://wa.me/5511999999999?text=Olá,+gostaria+de+saber+mais+sobre+a+Praqt" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="ob-btn ob-btn-alt"
+        >
+          Conversar no WhatsApp
+        </a>
+      </div>
+
+      <p style="font-size: 13px; color: #475569; margin-top: 40px; line-height: 1.6;">
+        Enquanto isso, você pode conferir mais sobre a Praqt nos nossos materiais ou preparar sua base de dados para integração rápida.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    // Get query params
+    const params = new URLSearchParams(window.location.search);
+    const nome = params.get('nome') || 'Visitante';
+    const email = params.get('email') || 'não informado';
+    const empresa = params.get('empresa') || 'não informada';
+
+    // Display data
+    document.getElementById('displayNome').textContent = nome;
+    document.getElementById('displayEmail').textContent = email;
+    document.getElementById('displayEmpresa').textContent = empresa;
+  </script>
+</body>
+</html>
